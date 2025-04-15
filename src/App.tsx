@@ -79,7 +79,8 @@ function AppContent() {
 
       <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6">
         <div className="container mx-auto px-4 text-center text-gray-500 dark:text-gray-400">
-          <p>数据来源: <a href="https://github.com/jamez-bondos/awesome-gpt4o-images" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">jamez-bondos/awesome-gpt4o-images</a></p>
+          <p className="mb-2">数据来源: <a href="https://github.com/jamez-bondos/awesome-gpt4o-images" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">jamez-bondos/awesome-gpt4o-images</a></p>
+          <p>在线预览: <a href="https://gpto-images-website-sjtvw658.devinapps.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://gpto-images-website-sjtvw658.devinapps.com</a></p>
         </div>
       </footer>
 
