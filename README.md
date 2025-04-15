@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+# GPT-4o 图片导航站
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![GPT-4o Images Gallery](https://raw.githubusercontent.com/jamez-bondos/awesome-gpt4o-images/main/examples/example_happy_capsule.png)
 
-Currently, two official plugins are available:
+## 项目简介
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+这是一个展示 OpenAI 最新多模态模型 GPT-4o 生成的精彩图片案例的导航站。用户可以浏览所有图片，查看详细的提示词，并支持一键复制提示词。
 
-## Expanding the ESLint configuration
+## 功能特点
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- 📸 展示 46 个 GPT-4o 生成的精彩图片案例
+- 💬 悬停时显示提示词并支持一键复制
+- 🔍 点击图片查看详情，了解更多信息
+- 🌙 支持深色/浅色模式
+- 📱 响应式设计，完美适配 PC 和移动端
+- 🔐 支持 Google 账号登录
 
-- Configure the top-level `parserOptions` property like this:
+## 在线预览
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- [GPT-4o 图片导航站](https://gpto-images-website-sjtvw658.devinapps.com)
+
+## 本地开发
+
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 技术栈
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Google Identity Services
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 数据来源
+
+数据来源于 [jamez-bondos/awesome-gpt4o-images](https://github.com/jamez-bondos/awesome-gpt4o-images) 仓库，包含了 46 个 GPT-4o 生成的精彩图片案例。
+
+## 作者
+
+- [Vincent Yang](https://github.com/yuezheng2006)
