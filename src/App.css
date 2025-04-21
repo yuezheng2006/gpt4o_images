@@ -11,16 +11,6 @@
   }
 }
 
-/* Image hover effects */
-.image-card-overlay {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.image-card:hover .image-card-overlay {
-  opacity: 1;
-}
-
 /* Detail view scrollbar styling */
 .detail-content::-webkit-scrollbar {
   width: 6px;

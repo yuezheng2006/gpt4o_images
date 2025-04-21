@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6b9eff" />
+      <stop offset="100%" stop-color="#a259f7" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg-gradient)" rx="15" ry="15" />
+  <g fill="#ffffff" opacity="0.9">
+    <path d="M200 100 Q 230 70, 260 100 T 320 100 Q 350 100, 350 130 Q 350 160, 320 160 L 200 160 Q 170 160, 170 130 Q 170 100, 200 100 Z" />
+    <circle cx="230" cy="120" r="10" fill="#a259f7" />
+  </g>
+  <text x="200" y="200" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#ffffff">图片加载中...</text>
+  <text x="200" y="230" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#ffffff">GPT-4o 生成的精彩案例</text>
+</svg>

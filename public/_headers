@@ -1,0 +1,31 @@
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, OPTIONS
+  Access-Control-Allow-Headers: *
+  Access-Control-Allow-Credentials: true
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; script-src * 'unsafe-inline' 'unsafe-eval' https://accounts.google.com/gsi/ https://lh3.googleusercontent.com/ https://gpt-4o.cyber101.cc/; style-src * 'unsafe-inline'; img-src * data: blob: https://lh3.googleusercontent.com/ https://gpt-4o.cyber101.cc/; font-src * data:; connect-src * https://accounts.google.com/ https://lh3.googleusercontent.com/ https://gpt-4o.cyber101.cc/
+  Cache-Control: public, max-age=86400
+  CF-Cache-Status: HIT
+  CF-APO: on
+  CF-Edge-Cache: cache, platform=wordpress
+  CF-Cache-Tags: gpt4o-images
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  CF-Cache-Status: HIT
+
+/favicon.svg
+  Cache-Control: public, max-age=86400
+  CF-Cache-Status: HIT
+
+/apple-touch-icon.svg
+  Cache-Control: public, max-age=86400
+  CF-Cache-Status: HIT
+
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+  CF-Cache-Status: BYPASS

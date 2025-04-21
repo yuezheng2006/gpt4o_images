@@ -47,7 +47,7 @@ export function ImageDetail({ image, isOpen, onClose }: ImageDetailProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <CustomDialogContent className="max-w-4xl w-[90vw] max-h-[90vh] overflow-y-auto detail-content">
+      <CustomDialogContent className="max-w-5xl w-[90vw] h-auto max-h-[95vh] overflow-hidden detail-content">
         <DialogHeader>
           <DialogTitle className="text-2xl flex items-center justify-between">
             <span>{image.title}</span>
@@ -68,8 +68,8 @@ export function ImageDetail({ image, isOpen, onClose }: ImageDetailProps) {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="my-6 flex flex-col md:flex-row gap-6">
-          <div className="md:w-1/2">
+        <div className="my-4 flex flex-col md:flex-row gap-4 overflow-y-auto" style={{ maxHeight: 'calc(95vh - 130px)' }}>
+          <div className="md:w-1/2 flex-shrink-0">
             <img 
               src={image.imagePath} 
               alt={image.title} 
@@ -77,19 +77,22 @@ export function ImageDetail({ image, isOpen, onClose }: ImageDetailProps) {
             />
           </div>
           
-          <div className="md:w-1/2 space-y-4">
+          <div className="md:w-1/2 space-y-4 overflow-y-auto pr-2" style={{ maxHeight: '100%' }}>
             <div>
               <h3 className="text-lg font-bold mb-2">提示词:</h3>
-              <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md relative">
-                <pre className="whitespace-pre-wrap text-sm">{image.prompt}</pre>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="absolute top-2 right-2"
-                  onClick={copyPrompt}
-                >
-                  <Copy className="h-4 w-4" />
-                </Button>
+              <div className="bg-gray-100 dark:bg-gray-800 p-4 pb-14 rounded-md relative">
+                <pre className="whitespace-pre-wrap text-sm overflow-y-auto" style={{ maxHeight: '200px', paddingBottom: '2rem' }}>{image.prompt}</pre>
+                <div className="absolute bottom-0 left-0 right-0 p-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 flex justify-end">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    onClick={copyPrompt}
+                  >
+                    <Copy className="h-4 w-4 mr-1" />
+                    <span className="text-xs">复制提示词</span>
+                  </Button>
+                </div>
               </div>
             </div>
 

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="gpt4o-favicon-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6b9eff"/>
+      <stop offset="100%" stop-color="#a259f7"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="64" height="64" rx="16" fill="url(#gpt4o-favicon-gradient)"/>
+  
+  <!-- Camera/photo icon with manual shadow -->
+  <rect x="14" y="41" width="18" height="12" rx="3" fill="rgba(0,0,0,0.2)"/>
+  <rect x="13" y="40" width="18" height="12" rx="3" fill="#fff" fill-opacity="0.90"/>
+  <circle cx="22" cy="46" r="3" fill="#a259f7" fill-opacity="0.7"/>
+  <rect x="18" y="38" width="6" height="4" rx="1.5" fill="#fff" fill-opacity="0.7"/>
+  
+  <!-- Main text with manual shadow -->
+  <text x="51%" y="36" text-anchor="middle" font-size="30" font-family="Arial, sans-serif" fill="rgba(0,0,0,0.3)" font-weight="bold">4O</text>
+  <text x="50%" y="35" text-anchor="middle" font-size="30" font-family="Arial, sans-serif" fill="#fff" font-weight="bold">4O</text>
+</svg>

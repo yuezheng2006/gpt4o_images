@@ -1,0 +1,15 @@
+{
+  "build": {
+    "command": "npm run build",
+    "output": "dist",
+    "environment": {
+      "NODE_VERSION": "18"
+    }
+  },
+  "routes": [
+    { "pattern": "/*", "script": null, "serve": "/index.html" }
+  ],
+  "env": {
+    "VITE_GOOGLE_CLIENT_ID": "817380442699-icblni9qcb7mvcapmedojcffkcq01toi.apps.googleusercontent.com"
+  }
+}
