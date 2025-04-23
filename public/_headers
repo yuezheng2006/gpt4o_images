@@ -7,7 +7,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; script-src * 'unsafe-inline' 'unsafe-eval' https://accounts.google.com/gsi/ https://lh3.googleusercontent.com/ https://gpt-4o.cyber101.cc/; style-src * 'unsafe-inline'; img-src * data: blob: https://lh3.googleusercontent.com/ https://gpt-4o.cyber101.cc/; font-src * data:; connect-src * https://accounts.google.com/ https://lh3.googleusercontent.com/ https://gpt-4o.cyber101.cc/
+  Content-Security-Policy: default-src 'self' * 'unsafe-inline' 'unsafe-eval' data: blob:; script-src 'self' * blob: 'unsafe-inline' 'unsafe-eval' https://accounts.google.com/gsi/ https://lh3.googleusercontent.com/ https://gpt-4o.cyber101.cc/; script-src-elem 'self' * blob: 'unsafe-inline' 'unsafe-eval' https://accounts.google.com/gsi/ https://lh3.googleusercontent.com/ https://gpt-4o.cyber101.cc/; style-src 'self' * 'unsafe-inline'; img-src 'self' * data: blob: https://lh3.googleusercontent.com/ https://raw.githubusercontent.com/ https://githubusercontent.com/ https://gpt-4o.cyber101.cc/ https://*.github.io/; font-src 'self' * data:; connect-src 'self' * https://accounts.google.com/ https://lh3.googleusercontent.com/ https://raw.githubusercontent.com/ https://githubusercontent.com/ https://gpt-4o.cyber101.cc/ https://*.github.io/
   Cache-Control: public, max-age=86400
   CF-Cache-Status: HIT
   CF-APO: on

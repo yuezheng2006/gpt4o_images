@@ -55,12 +55,12 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   
-  // 特殊处理GitHub图片
+  // 特殊处理GitHub图片 - 配置为优先尝试直接加载，失败再使用代理
   if (event.request.url.includes('githubusercontent.com') || 
       event.request.url.includes('github.com') && 
       event.request.url.match(/\.(jpe?g|png|gif|svg|webp)$/i)) {
     
-    event.respondWith(handleImageRequest(event.request));
+    event.respondWith(fetchWithFallback(event.request));
     return;
   }
   
@@ -122,40 +122,22 @@ self.addEventListener('fetch', event => {
   );
 });
 
-// 处理图片请求的特殊逻辑
-async function handleImageRequest(request) {
+// 优化的图片请求处理函数 - 先直接加载，失败再用代理
+async function fetchWithFallback(request) {
   const url = new URL(request.url);
+  let response = null;
   
-  // 处理Google用户内容和cyber101.cc域名
-  const isGoogleContent = url.hostname.includes('googleusercontent.com');
-  const isCyber101 = url.hostname.includes('gpt-4o.cyber101.cc');
-  
-  // 如果是Google内容或cyber101域名，使用代理请求
-  if (isGoogleContent || isCyber101) {
-    try {
-      // 使用图片代理服务
-      const proxyUrl = `/api/image-proxy?url=${encodeURIComponent(request.url)}`;
-      const proxyResponse = await fetch(proxyUrl);
-      
-      if (proxyResponse && proxyResponse.ok) {
-        return proxyResponse;
-      }
-    } catch (error) {
-      console.error('Proxy request failed:', error);
-      // 失败时继续尝试原始请求
-    }
-  }
-  
-  // 先检查图片缓存
+  // 先检查缓存
   const cachedResponse = await caches.match(request);
   if (cachedResponse) {
     return cachedResponse;
   }
   
+  // 第一步：尝试直接从源站加载
   try {
-    // 尝试从网络获取图片
+    console.log('尝试直接加载图片:', request.url);
+    
     const fetchOptions = {
-      // 添加特定的请求头
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; GPT4OImages/1.0)',
         'Accept': 'image/*, */*;q=0.8',
@@ -163,29 +145,59 @@ async function handleImageRequest(request) {
         'Referer': self.location.origin
       },
       mode: 'cors',
-      credentials: 'omit',  // 不发送认证信息
+      credentials: 'omit',
       cache: 'no-store'
     };
     
-    const response = await fetch(request, fetchOptions);
+    // 设置超时时间（可调整）
+    const timeoutPromise = new Promise((_, reject) => {
+      setTimeout(() => reject(new Error('直接加载超时')), 5000);
+    });
+    
+    // 使用 Promise.race 来实现超时控制
+    response = await Promise.race([
+      fetch(request, fetchOptions),
+      timeoutPromise
+    ]);
     
     if (response && response.ok) {
-      // 克隆响应并缓存
+      console.log('直接加载成功:', request.url);
       const responseToCache = response.clone();
       const cache = await caches.open(IMAGE_CACHE_NAME);
       await cache.put(request, responseToCache);
       return response;
     }
-    throw new Error('Image fetch failed');
   } catch (error) {
-    console.error('Image fetch error:', error);
-    // 返回备用图片
-    return caches.match('/fallback-image.svg')
-      .then(fallbackResponse => fallbackResponse || 
-        new Response('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="#6b9eff"/><text x="200" y="150" font-family="Arial" font-size="24" fill="white" text-anchor="middle">图片加载失败</text></svg>', 
-        { headers: { 'Content-Type': 'image/svg+xml' } })
-      );
+    console.warn('直接加载失败:', error.message);
+    // 失败时继续使用代理
   }
+  
+  // 第二步：如果直接加载失败，尝试使用代理
+  if (url.hostname.includes('githubusercontent.com') || url.hostname.includes('github.com')) {
+    try {
+      console.log('尝试使用代理加载:', request.url);
+      const proxyUrl = `/api/image-proxy?url=${encodeURIComponent(request.url)}`;
+      response = await fetch(proxyUrl);
+      
+      if (response && response.ok) {
+        console.log('代理加载成功:', request.url);
+        const responseToCache = response.clone();
+        const cache = await caches.open(IMAGE_CACHE_NAME);
+        await cache.put(request, responseToCache);
+        return response;
+      }
+    } catch (error) {
+      console.error('代理加载失败:', error.message);
+    }
+  }
+  
+  // 第三步：如果上述方法都失败，返回默认占位图片
+  console.log('所有加载方式失败，返回占位图片');
+  return caches.match('/fallback-image.svg')
+    .then(fallbackResponse => fallbackResponse || 
+      new Response('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="#6b9eff"/><text x="200" y="150" font-family="Arial" font-size="24" fill="white" text-anchor="middle">图片加载失败</text></svg>', 
+      { headers: { 'Content-Type': 'image/svg+xml' } })
+    );
 }
 
 // 后台同步API数据

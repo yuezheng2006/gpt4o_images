@@ -1,26 +1,10 @@
+# Cloudflare Pages 配置
 name = "gpt4o-images"
-
-# 主要配置
-type = "webpack"
-usage_model = "bundled"
-workers_dev = true
-
-# 构建配置
-[build]
-command = "npm run build"
-destination = "dist"
-
-# Pages特定配置
 pages_build_output_dir = "dist"
 
 # 环境变量
 [vars]
 VITE_GOOGLE_CLIENT_ID = "817380442699-icblni9qcb7mvcapmedojcffkcq01toi.apps.googleusercontent.com"
-
-# 路由规则
-[site]
-bucket = "./dist"
-entry-point = "workers-site"
 
 # 自定义域名配置 (需要在Cloudflare DNS中设置)
 # [env.production]
