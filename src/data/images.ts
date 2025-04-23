@@ -1,10 +1,19 @@
-// 本文件由脚本自动生成 (2025-04-21T15:24:17.895Z)
-// 共 61 条记录
+// 本文件由脚本自动生成 (2025-04-23T04:54:06.030Z)
+// 共 62 条记录
 import { ImageItem } from '../types';
 
 export const images: ImageItem[] = [
   {
     "id": 1,
+    "title": "可爱珐琅别针",
+    "author": "gnrlyxyz",
+    "originalLink": "https://x.com/gnrlyxyz/status/1914303110853583302",
+    "imagePath": "https://raw.githubusercontent.com/jamez-bondos/awesome-gpt4o-images/main/examples/example_enamel_pins_pop_culture.jpeg",
+    "prompt": "将附图中的主题变成可爱的珐琅别针。使用光泽的金属轮廓和鲜艳的珐琅填充。无需额外添加任何功能。方形模型格式。白色背景。",
+    "needsReferenceImage": false
+  },
+  {
+    "id": 2,
     "title": "虚构推文截图 (爱因斯坦) (by [@egeberkina](https://x.com/egeberkina))",
     "author": "unknown",
     "originalLink": "https://x.com/egeberkina/status/1914299716394778713",
@@ -13,7 +22,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Emoji 簇绒地毯",
     "author": "gizakdag",
     "originalLink": "https://x.com/gizakdag/status/1913925062568144924",
@@ -23,7 +32,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "彩色矢量艺术海报",
     "author": "michaelrabone",
     "originalLink": "https://x.com/michaelrabone/status/1913865394139316291",
@@ -33,7 +42,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "云彩艺术",
     "author": "umesh_ai",
     "originalLink": "https://x.com/umesh_ai/status/1913628737872027805",
@@ -43,7 +52,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "8位像素图标",
     "author": "egeberkina",
     "originalLink": "https://x.com/egeberkina/status/1913654508330058064",
@@ -53,7 +62,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "迷你 3D 建筑",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1913759515700285569",
@@ -63,7 +72,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "低多边形 (Low-Poly) 3D 渲染 (by [@azed_ai](https://x.com/azed_ai))",
     "author": "unknown",
     "originalLink": "https://x.com/azed_ai/status/1912084257918595342",
@@ -73,7 +82,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "“极其平凡”的iPhone自拍",
     "author": "jiamimaodashu",
     "originalLink": "https://x.com/jiamimaodashu/status/1912653073190879410",
@@ -83,7 +92,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "Emoji 充气感靠垫",
     "author": "gizakdag",
     "originalLink": "https://x.com/gizakdag/status/1912858535643197927",
@@ -93,7 +102,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 10,
+    "id": 11,
     "title": "纸艺风格 Emoji 图标",
     "author": "egeberkina",
     "originalLink": "https://x.com/egeberkina/status/1912521263085482464",
@@ -103,7 +112,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 11,
+    "id": 12,
     "title": "护照入境印章",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO",
@@ -113,7 +122,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 12,
+    "id": 13,
     "title": "物理破坏效果卡片 (劳拉) (by [@op7418](https://x.com/op7418))",
     "author": "unknown",
     "originalLink": "",
@@ -123,7 +132,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 13,
+    "id": 14,
     "title": "时尚杂志封面风格",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1912536019905233194",
@@ -132,7 +141,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 14,
+    "id": 15,
     "title": "体素风格 3D 图标转换",
     "author": "BrettFromDJ",
     "originalLink": "https://x.com/BrettFromDJ",
@@ -142,7 +151,7 @@ export const images: ImageItem[] = [
     "additionalNote": "**需上传参考图片：** 需要上传两张图片：一张包含期望体素风格图标的参考图（如推文作者提供），以及一张要转换的原始图标。"
   },
   {
-    "id": 15,
+    "id": 16,
     "title": "键盘ESC 键帽微型立体模型",
     "author": "egeberkina",
     "originalLink": "https://x.com/egeberkina/status/1911368319212408926",
@@ -152,7 +161,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 16,
+    "id": 17,
     "title": "快乐胶囊制作",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1911724629460455896",
@@ -161,7 +170,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 17,
+    "id": 18,
     "title": "3D Q版大学拟人化形象",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1911988003729203648",
@@ -171,7 +180,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 18,
+    "id": 19,
     "title": "RPG 风格角色卡片制作",
     "author": "berryxia_ai",
     "originalLink": "https://x.com/berryxia_ai/status/1911334046724165905",
@@ -181,7 +190,7 @@ export const images: ImageItem[] = [
     "additionalNote": "**需上传参考图片：** 可选。可根据职业或角色描述生成，或上传照片作为参考。"
   },
   {
-    "id": 19,
+    "id": 20,
     "title": "Q版可爱俄罗斯套娃 (戴珍珠耳环的少女) (by [@ZHO_ZHO_ZHO](https://x.com/ZHO_ZHO_ZHO))",
     "author": "unknown",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1911669883315818497",
@@ -191,7 +200,7 @@ export const images: ImageItem[] = [
     "additionalNote": "**需上传参考图片：** 需要上传一张人物图片作为转换对象 (原文使用了"
   },
   {
-    "id": 20,
+    "id": 21,
     "title": "3D Q版情侣水晶球",
     "author": "balconychy",
     "originalLink": "https://x.com/balconychy/status/1909908568129655248",
@@ -200,7 +209,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 21,
+    "id": 22,
     "title": "微型立体场景 (孙悟空三打白骨精) (by [@dotey](https://x.com/dotey))",
     "author": "unknown",
     "originalLink": "https://x.com/dotey/status/1911609122547449886",
@@ -210,7 +219,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 22,
+    "id": 23,
     "title": "日系双格漫画 (少女总统红温了) (by [@hellokaton](https://x.com/hellokaton))",
     "author": "unknown",
     "originalLink": "https://x.com/hellokaton/status/1910900979194646959",
@@ -219,7 +228,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 23,
+    "id": 24,
     "title": "卡通插画",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1905103477879267823",
@@ -228,7 +237,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 24,
+    "id": 25,
     "title": "手绘信息图卡片",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1907870919852179850",
@@ -237,7 +246,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 25,
+    "id": 26,
     "title": "社交媒体帖子涂鸦",
     "author": "op7418",
     "originalLink": "https://x.com/op7418/status/1906208691877253536",
@@ -246,7 +255,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 26,
+    "id": 27,
     "title": "极简主义 3D 插画 (文字版) (by [@dotey](https://x.com/dotey))",
     "author": "unknown",
     "originalLink": "https://x.com/dotey/status/1907131027253772399",
@@ -255,7 +264,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 27,
+    "id": 28,
     "title": "毛茸茸南瓜灯",
     "author": "gizakdag",
     "originalLink": "https://x.com/gizakdag",
@@ -264,7 +273,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 28,
+    "id": 29,
     "title": "手绘信息图卡片",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1907903480678985784",
@@ -273,7 +282,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 29,
+    "id": 30,
     "title": "全家福婚纱照",
     "author": "balconychy",
     "originalLink": "https://x.com/balconychy/status/1909426314643222595",
@@ -282,7 +291,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 30,
+    "id": 31,
     "title": "纸艺剪贴风格招聘广告",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1905021792642564406",
@@ -291,7 +300,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 31,
+    "id": 32,
     "title": "动漫贴纸集合",
     "author": "richardchang",
     "originalLink": "https://x.com/richardchang/status/1909086122959139312",
@@ -300,7 +309,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 32,
+    "id": 33,
     "title": "35mm 胶片风格飞岛",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1905020833451348283",
@@ -309,7 +318,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 33,
+    "id": 34,
     "title": "名画人物 OOTD",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1909892294217781714",
@@ -318,7 +327,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 34,
+    "id": 35,
     "title": "扁平贴纸设计",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1908044836953108490",
@@ -327,7 +336,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 35,
+    "id": 36,
     "title": "Q 版表情包制作",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1909800530739679488",
@@ -336,7 +345,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 36,
+    "id": 37,
     "title": "名画人物麦片广告",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1909542765857587310",
@@ -345,7 +354,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 37,
+    "id": 38,
     "title": "极简主义 3D 插画",
     "author": "0xdlk",
     "originalLink": "https://x.com/0xdlk/status/1906843247432929642",
@@ -354,7 +363,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 38,
+    "id": 39,
     "title": "Funko Pop 公仔制作",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1909047283485671924",
@@ -363,7 +372,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 39,
+    "id": 40,
     "title": "《泰坦尼克号》模仿",
     "author": "balconychy",
     "originalLink": "https://x.com/balconychy/status/1909916265067557299",
@@ -372,7 +381,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 40,
+    "id": 41,
     "title": "小红书封面",
     "author": "balconychy",
     "originalLink": "https://x.com/balconychy/status/1905507936526627078",
@@ -381,7 +390,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 41,
+    "id": 42,
     "title": "简笔画表情包",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1909907741948399873",
@@ -390,7 +399,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 42,
+    "id": 43,
     "title": "四格漫画 (相对论) (by [@dotey](https://x.com/dotey))",
     "author": "unknown",
     "originalLink": "https://x.com/dotey/status/1904980568107819060",
@@ -399,7 +408,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 43,
+    "id": 44,
     "title": "语文课本重绘",
     "author": "balconychy",
     "originalLink": "https://x.com/balconychy/status/1906982626365178361",
@@ -408,7 +417,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 44,
+    "id": 45,
     "title": "皮克斯3D风格",
     "author": "AnimeAI",
     "originalLink": "https://animeai.online/#demo-gallery",
@@ -417,7 +426,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 45,
+    "id": 46,
     "title": "数码宝贝风格图",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1911001291280859559",
@@ -426,7 +435,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 46,
+    "id": 47,
     "title": "布丁老虎机",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1911107569898471818",
@@ -435,7 +444,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 47,
+    "id": 48,
     "title": "讽刺海报生成",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1905287637084274742",
@@ -444,7 +453,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 48,
+    "id": 49,
     "title": "《海贼王》主题手办制作",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1909047547563213145",
@@ -454,7 +463,7 @@ export const images: ImageItem[] = [
     "additionalNote": "**需上传参考图片：** 一张半身或者全身照片。"
   },
   {
-    "id": 49,
+    "id": 50,
     "title": "3D Q版风格",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1908194518345678865",
@@ -463,7 +472,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 50,
+    "id": 51,
     "title": "3D 情侣珠宝盒摆件",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1909332895115714835",
@@ -472,7 +481,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 51,
+    "id": 52,
     "title": "PS2 游戏封面 (GTA x Shrek) (by [@dotey](https://x.com/dotey))",
     "author": "unknown",
     "originalLink": "https://x.com/dotey/status/1904978767090524372",
@@ -481,7 +490,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 52,
+    "id": 53,
     "title": "讽刺漫画生成",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1910514811756065159",
@@ -490,7 +499,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 53,
+    "id": 54,
     "title": "气球名画",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1910976632141267237",
@@ -499,7 +508,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 54,
+    "id": 55,
     "title": "乐高收藏品",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1910644499354968091",
@@ -508,7 +517,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 55,
+    "id": 56,
     "title": "个性化房间设计",
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1910698005193515370",
@@ -518,7 +527,7 @@ export const images: ImageItem[] = [
     "additionalNote": ""
   },
   {
-    "id": 56,
+    "id": 57,
     "title": "角色穿越传送门",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1908910838636765204",
@@ -527,7 +536,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 57,
+    "id": 58,
     "title": "吉卜力风格",
     "author": "AnimeAI",
     "originalLink": "https://animeai.online/#demo-gallery",
@@ -536,7 +545,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 58,
+    "id": 59,
     "title": "Q 版中式婚礼图",
     "author": "balconychy",
     "originalLink": "https://x.com/balconychy/status/1909418699150237917",
@@ -545,7 +554,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 59,
+    "id": 60,
     "title": "复古宣传海报",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1905251524248248650",
@@ -554,7 +563,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 60,
+    "id": 61,
     "title": "立体相框",
     "author": "dotey",
     "originalLink": "https://x.com/dotey/status/1908238003169903060",
@@ -563,7 +572,7 @@ export const images: ImageItem[] = [
     "needsReferenceImage": false
   },
   {
-    "id": 61,
+    "id": 62,
     "title": "Q版求婚场景",
     "author": "balconychy",
     "originalLink": "https://x.com/balconychy/status/1909417750587486469",
