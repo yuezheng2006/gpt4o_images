@@ -1,31 +1,9 @@
 import { ImageItem } from '../types';
-import { Dialog, DialogHeader, DialogTitle, DialogDescription, DialogPortal, DialogOverlay } from './ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { Button } from './ui/button';
-import { Copy, X, ExternalLink } from 'lucide-react';
+import { Copy, ExternalLink } from 'lucide-react';
 import { toast } from './ui/use-toast';
-import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { cn } from "@/lib/utils";
-import * as React from "react";
-
-const CustomDialogContent = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <DialogPortal>
-    <DialogOverlay />
-    <DialogPrimitive.Content
-      ref={ref}
-      className={cn(
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-zinc-200 bg-white p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg dark:border-zinc-800 dark:bg-zinc-950",
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </DialogPrimitive.Content>
-  </DialogPortal>
-));
-CustomDialogContent.displayName = "CustomDialogContent";
+import { useRef } from 'react';
 
 interface ImageDetailProps {
   image: ImageItem | null;
@@ -34,9 +12,15 @@ interface ImageDetailProps {
 }
 
 export function ImageDetail({ image, isOpen, onClose }: ImageDetailProps) {
-  if (!image) return null;
+  // 初始化引用
+  const promptCopyButtonRef = useRef<HTMLButtonElement>(null);
 
+  // 如果没有图片数据，不渲染任何内容
+  if (!image) return null;
+  
+  // 复制提示词到剪贴板
   const copyPrompt = () => {
+    if (!image) return;
     navigator.clipboard.writeText(image.prompt);
     toast({
       title: "已复制提示词",
@@ -47,15 +31,12 @@ export function ImageDetail({ image, isOpen, onClose }: ImageDetailProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <CustomDialogContent className="max-w-5xl w-[90vw] h-auto max-h-[95vh] overflow-hidden detail-content">
-        <DialogHeader>
-          <DialogTitle className="text-2xl flex items-center justify-between">
-            <span>{image.title}</span>
-            <Button variant="ghost" size="icon" onClick={onClose} className="h-8 w-8">
-              <X className="h-4 w-4" />
-            </Button>
+      <DialogContent className="max-w-5xl w-[95vw] h-auto max-h-[95vh] overflow-hidden p-3 md:p-6" forceMount>
+        <DialogHeader className="pb-1">
+          <DialogTitle className="text-lg md:text-2xl">
+            <span className="truncate pr-2">{image.title}</span>
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-sm">
             by {image.author} | 
             <a 
               href={image.originalLink} 
@@ -66,22 +47,27 @@ export function ImageDetail({ image, isOpen, onClose }: ImageDetailProps) {
               原文链接 <ExternalLink className="ml-1 h-3 w-3" />
             </a>
           </DialogDescription>
+
         </DialogHeader>
 
-        <div className="my-4 flex flex-col md:flex-row gap-4 overflow-y-auto" style={{ maxHeight: 'calc(95vh - 130px)' }}>
-          <div className="md:w-1/2 flex-shrink-0">
-            <img 
-              src={image.imagePath} 
-              alt={image.title} 
-              className="w-full rounded-lg shadow-md"
-            />
+        {/* 桌面端布局 - 保持不变 */}
+        <div className="hidden md:flex my-2 md:my-4 flex-row gap-4" style={{ maxHeight: 'calc(85vh - 110px)' }}>
+          <div className="w-1/2 flex-shrink-0 max-h-none overflow-hidden">
+            <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+              <img 
+                src={image.imagePath} 
+                alt={image.title} 
+                className="absolute inset-0 w-full h-full object-contain rounded-lg shadow-md"
+                loading="eager"
+              />
+            </div>
           </div>
           
-          <div className="md:w-1/2 space-y-4 overflow-y-auto pr-2" style={{ maxHeight: '100%' }}>
+          <div className="w-1/2 space-y-3 overflow-y-auto pr-2" style={{ maxHeight: '100%' }}>
             <div>
               <h3 className="text-lg font-bold mb-2">提示词:</h3>
               <div className="bg-gray-100 dark:bg-gray-800 p-4 pb-14 rounded-md relative">
-                <pre className="whitespace-pre-wrap text-sm overflow-y-auto" style={{ maxHeight: '200px', paddingBottom: '2rem' }}>{image.prompt}</pre>
+                <pre className="whitespace-pre-wrap text-sm overflow-y-auto" style={{ maxHeight: '100%', paddingBottom: '2rem' }}>{image.prompt}</pre>
                 <div className="absolute bottom-0 left-0 right-0 p-2 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 flex justify-end">
                   <Button 
                     variant="outline" 
@@ -111,7 +97,61 @@ export function ImageDetail({ image, isOpen, onClose }: ImageDetailProps) {
             )}
           </div>
         </div>
-      </CustomDialogContent>
+        
+        {/* 移动端布局 - 简化版：prompt在上，图片在下 */}
+        <div className="md:hidden overflow-y-auto" style={{ maxHeight: 'calc(80vh - 130px)' }}>
+          {/* 提示词内容 */}
+          <div className="mb-4">
+            <div className="flex justify-between items-center mb-2">
+              <h3 className="text-base font-bold">提示词:</h3>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 h-8"
+                onClick={copyPrompt}
+                ref={promptCopyButtonRef}
+              >
+                <Copy className="h-4 w-4 mr-1" />
+                <span className="text-xs">复制提示词</span>
+              </Button>
+            </div>
+            <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-md">
+              <pre className="whitespace-pre-wrap text-sm">{image.prompt}</pre>
+            </div>
+            
+            {image.needsReferenceImage && (
+              <div className="mt-4">
+                <h3 className="text-base font-bold mb-1">需要参考图片:</h3>
+                <p>{image.referenceNote}</p>
+              </div>
+            )}
+
+            {image.additionalNote && (
+              <div className="mt-4">
+                <h3 className="text-base font-bold mb-1">附加说明:</h3>
+                <p>{image.additionalNote}</p>
+              </div>
+            )}
+          </div>
+          
+          {/* 图片内容 - 更小 并预留图片空间 */}
+          <div className="mt-4">
+            <div className="flex justify-center">
+              <div 
+                className="relative w-full flex items-center justify-center" 
+                style={{ height: '30vh' }}
+              >
+                <img 
+                  src={image.imagePath} 
+                  alt={image.title} 
+                  className="max-w-full max-h-full object-contain rounded-lg shadow-md" 
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </DialogContent>
     </Dialog>
   );
 }
