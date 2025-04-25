@@ -6,6 +6,7 @@ export interface ImageItem {
   imagePath: string;
   prompt: string;
   needsReferenceImage: boolean;
+  category?: string;
   referenceNote?: string;
   additionalNote?: string;
 }

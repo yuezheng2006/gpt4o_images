@@ -94,7 +94,7 @@ export const images: ImageItem[] = [
   },
   {
     "id": 9,
-    "title": "Emoji 簇绒地毯",
+    "title": "Emoji 充气感靠垫",
     "author": "gizakdag",
     "originalLink": "https://x.com/gizakdag/status/1913925062568144924",
     "imagePath": "https://raw.githubusercontent.com/jamez-bondos/awesome-gpt4o-images/main/examples/example_tufted_rug_dino_emoji.jpeg",
@@ -262,13 +262,12 @@ export const images: ImageItem[] = [
   },
   {
     "id": 26,
-    "title": "Q版可爱俄罗斯套娃 (戴珍珠耳环的少女) (by [@ZHO_ZHO_ZHO](https://x.com/ZHO_ZHO_ZHO))",
-    "author": "unknown",
-    "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1911669883315818497",
-    "imagePath": "https://raw.githubusercontent.com/jamez-bondos/awesome-gpt4o-images/main/examples/example_matryoshka_pearl_earring.png",
-    "prompt": "把图片人物生成变成 Q 版可爱俄罗斯套娃🪆，大到小一共五个，放在精致的木桌上，横幅4:3比例",
-    "needsReferenceImage": false,
-    "additionalNote": "**需上传参考图片：** 需要上传一张人物图片作为转换对象 (原文使用了"
+    "title": "Q 版表情包制作",
+    "author": "dotey",
+    "originalLink": "https://x.com/dotey/status/1909800530739679488",
+    "imagePath": "https://raw.githubusercontent.com/jamez-bondos/awesome-gpt4o-images/main/examples/example_chibi_emoji_pack.png",
+    "prompt": "创作一套全新的 chibi sticker，共六个独特姿势，以用户形象为主角：\n1. 双手比出剪刀手，俏皮地眨眼；\n2. 泪眼汪汪、嘴唇微微颤动，呈现可爱哭泣的表情；\n3. 张开双臂，做出热情的大大拥抱姿势；\n4. 侧卧入睡，靠着迷你枕头，带着甜甜的微笑；\n5. 自信满满地向前方伸手指，周围点缀闪亮特效；\n6. 手势飞吻，周围飘散出爱心表情。\n保留 chibi 美学风格：夸张有神的大眼睛、柔和的面部线条、活泼俏皮的短款黑色发型、配以大胆领口设计的白色服饰，背景使用充满活力的红色，并搭配星星或彩色纸屑元素进行装饰。周边适当留白。\nAspect ratio: 9:16",
+    "needsReferenceImage": false
   },
   {
     "id": 27,
@@ -394,7 +393,7 @@ export const images: ImageItem[] = [
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1909892294217781714",
     "imagePath": "https://raw.githubusercontent.com/jamez-bondos/awesome-gpt4o-images/main/examples/example_pearl_earring_ootd.png",
-    "prompt": "为图片人物生成不同职业风的OOTD，时尚穿搭和配饰，和人物色系一致的纯色背景，Q版 3d，c4d渲染，保持人脸特征，姿势都要保持一致，人物的比例腿很修长\n\n构图：9:16\n顶部文字：OOTD，左侧为人物ootd q版形象，右侧为穿搭的单件展示\n\n先来第一个职业：时尚设计师",
+    "prompt": "为我生成一张名画人物OOTD，时尚穿搭和配饰，和人物色系一致的纯色背景，Q版 3d，c4d渲染，保持人脸特征，姿势都要保持一致，人物的比例腿很修长\n\n构图：9:16\n顶部文字：OOTD，左侧为人物ootd q版形象，右侧为穿搭的单件展示\n\n先来第一个职业：时尚设计师",
     "needsReferenceImage": false
   },
   {
@@ -421,7 +420,7 @@ export const images: ImageItem[] = [
     "author": "ZHO_ZHO_ZHO",
     "originalLink": "https://x.com/ZHO_ZHO_ZHO/status/1909542765857587310",
     "imagePath": "https://raw.githubusercontent.com/jamez-bondos/awesome-gpt4o-images/main/examples/example_master_oats_ad.png",
-    "prompt": "《大师麦片》：根据我上传的照片的人物特征判断，为他生成一个符合他特质的燕麦片搭配（比如蔬菜、水果、酸奶、粗粮等等）和包装设计，然后生成他作为麦片包装盒封面人物 加 相应麦片搭配的广告封面，人物要保持特征、可爱Q版3d、c4d渲染风格，麦片所放置的地方的风格也要符合设定，比如放在厨房、超市 极简主义的设计台上等等，先做好设定，再生成图像",
+    "prompt": "为我生成一张名画人物麦片广告，根据我上传的照片的人物特征判断，为他生成一个符合他特质的燕麦片搭配（比如蔬菜、水果、酸奶、粗粮等等）和包装设计，然后生成他作为麦片包装盒封面人物 加 相应麦片搭配的广告封面，人物要保持特征、可爱Q版3d、c4d渲染风格，麦片所放置的地方的风格也要符合设定，比如放在厨房、超市 极简主义的设计台上等等，先做好设定，再生成图像",
     "needsReferenceImage": false
   },
   {
@@ -492,7 +491,7 @@ export const images: ImageItem[] = [
     "title": "皮克斯3D风格",
     "author": "AnimeAI",
     "originalLink": "https://animeai.online/#demo-gallery",
-    "imagePath": "https://animeai.online/demo/pixar-style-godfather-scene.png",
+    "imagePath": "https://animeai.online/demo/ghibli-style-mona-lisa.png",
     "prompt": "以皮克斯 3D 风格重绘这张照片",
     "needsReferenceImage": false
   },

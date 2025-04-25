@@ -34,8 +34,8 @@ export function ImageCard({ image, onClick }: ImageCardProps) {
       </div>
 
       <div className="p-4 flex-grow flex flex-col justify-between">
-        <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100 mb-2">{image.title}</h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400">by {image.author}</p>
+        <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100 mb-2 truncate overflow-hidden text-ellipsis" title={image.title}>{image.title}</h3>
+        <p className="text-sm text-gray-500 dark:text-gray-400 truncate">by {image.author}</p>
       </div>
 
       <div className="absolute inset-0 bg-black/80 flex flex-col justify-between p-6 opacity-0 group-hover:opacity-100 hover:opacity-100 transition-opacity duration-300 z-10">
