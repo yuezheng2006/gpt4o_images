@@ -26,8 +26,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Add types here */
+    "types": ["vite/client", "vite-plugin-pwa/client"] // + Add types for Vite and PWA plugin
   },
   "include": ["src"]
 }
-

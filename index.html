@@ -21,19 +21,5 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <!-- Service Worker注册 -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-              console.log('Service Worker注册成功:', registration.scope);
-            })
-            .catch(error => {
-              console.error('Service Worker注册失败:', error);
-            });
-        });
-      }
-    </script>
   </body>
 </html>

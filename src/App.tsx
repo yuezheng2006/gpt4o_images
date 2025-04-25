@@ -9,6 +9,7 @@ import { AuthProvider } from './components/AuthProvider'
 import { GoogleLoginButton } from './components/GoogleLoginButton'
 import { UserMenu } from './components/UserMenu'
 import { useAuth } from './components/AuthProvider'
+import ReloadPrompt from './components/ReloadPrompt'
 
 function loadGoogleScript() {
   const script = document.createElement('script')
@@ -26,6 +27,11 @@ function AppContent() {
   const [isDetailOpen, setIsDetailOpen] = useState(false)
   const { isAuthenticated, login } = useAuth()
 
+  useEffect(() => {
+    const cleanup = loadGoogleScript()
+    return cleanup
+  }, [])
+
   const handleImageClick = (image: ImageItem) => {
     setSelectedImage(image)
     setIsDetailOpen(true)
@@ -34,11 +40,6 @@ function AppContent() {
   const handleCloseDetail = () => {
     setIsDetailOpen(false)
   }
-
-  useEffect(() => {
-    const cleanup = loadGoogleScript()
-    return cleanup
-  }, [])
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -67,7 +68,7 @@ function AppContent() {
 
       <main className="container mx-auto py-8 px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {images.map((image) => (
+          {images.slice().reverse().map((image) => (
             <div key={image.id} className="h-full aspect-[1/1.2] block group">
               <ImageCard 
                 image={image} 
@@ -78,13 +79,6 @@ function AppContent() {
         </div>
       </main>
 
-      <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6">
-        <div className="container mx-auto px-4 text-center text-gray-500 dark:text-gray-400">
-          <p className="mb-2">数据来源: <a href="https://github.com/jamez-bondos/awesome-gpt4o-images" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">jamez-bondos/awesome-gpt4o-images</a></p>
-          <p>在线预览: <a href="https://gpto-images-website-sjtvw658.devinapps.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://gpto-images-website-sjtvw658.devinapps.com</a></p>
-        </div>
-      </footer>
-
       <ImageDetail 
         image={selectedImage} 
         isOpen={isDetailOpen} 
@@ -92,6 +86,7 @@ function AppContent() {
       />
       
       <Toaster position="top-right" />
+      <ReloadPrompt />
     </div>
   )
 }
