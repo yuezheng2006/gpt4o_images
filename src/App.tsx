@@ -45,10 +45,19 @@ function AppContent() {
   }, [])
 
   useEffect(() => {
-    const mergedImages = originalImages.map(image => ({
-      ...image,
-      category: imageCategories[image.id]
-    }));
+    // 创建一个包含所有原始图片的拷贝
+    const mergedImages = originalImages.map(img => ({...img}));
+    
+    // 使用新的数据结构为图片设置分类
+    for (const [category, imageIds] of Object.entries(imageCategories)) {
+      for (const id of imageIds) {
+        const image = mergedImages.find(img => img.id === id);
+        if (image) {
+          (image as ImageItem & { category: string }).category = category;
+        }
+      }
+    }
+    
     setProcessedImages(mergedImages);
 
     const cleanup = loadGoogleScript()
