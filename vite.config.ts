@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'prompt',
+      registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'fallback-image.svg'],
       manifest: {
         name: 'GPT4O Images Gallery',
@@ -87,7 +87,8 @@ export default defineConfig({
               }
             }
           }
-        ]
+        ],
+        skipWaiting: true // Add skipWaiting to activate new SW immediately
       }
     })
   ],
