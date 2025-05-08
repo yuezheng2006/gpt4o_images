@@ -24,17 +24,20 @@ export function ImageCard({ image, onClick }: ImageCardProps) {
       className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-300 ease-in-out hover:shadow-xl bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 h-full flex flex-col" 
       onClick={onClick}
     >
-      <div className="aspect-square w-full overflow-hidden relative">
+      <div className="p-3 border-b border-gray-200 dark:border-gray-700">
+        <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100 truncate overflow-hidden text-ellipsis" title={image.title}>{image.title}</h3>
+      </div>
+      
+      <div className="relative pt-[100%] overflow-hidden">
         <img 
           src={image.imagePath} 
           alt={image.title} 
-          className="object-cover w-full h-full transition-opacity duration-500 ease-in-out opacity-100 group-hover:scale-105"
+          className="absolute inset-0 object-cover w-full h-full transition-all duration-500 ease-in-out group-hover:scale-105"
           loading="lazy"
         />
       </div>
 
-      <div className="p-4 flex-grow flex flex-col justify-between">
-        <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100 mb-2 truncate overflow-hidden text-ellipsis" title={image.title}>{image.title}</h3>
+      <div className="p-3 flex items-center">
         <p className="text-sm text-gray-500 dark:text-gray-400 truncate">by {image.author}</p>
       </div>
 

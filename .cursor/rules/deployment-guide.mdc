@@ -1,0 +1,32 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 部署指南
+
+## Cloudflare Pages 部署
+项目使用 Cloudflare Pages 进行静态网站部署：
+- [wrangler.toml](mdc:wrangler.toml) 包含 Cloudflare Workers 配置
+- 使用 Cloudflare Functions 作为图片代理服务
+
+## 环境变量配置
+部署前需要配置以下环境变量：
+- 参考 [.env.example](mdc:.env.example) 文件
+- 在 Cloudflare Pages 的环境变量设置中配置相应的值
+
+## 构建配置
+- [vite.config.ts](mdc:vite.config.ts) 包含生产环境构建配置
+- [netlify.toml](mdc:netlify.toml) 包含 Netlify 备用部署配置
+
+## 部署步骤
+1. 确保所有依赖都已正确安装
+2. 运行构建命令 `npm run build`
+3. 提交代码到 main 分支触发自动部署
+4. 在 Cloudflare Pages 控制台监控部署状态
+
+## 性能优化
+1. 使用 Vite 的生产构建优化
+2. 启用 Cloudflare 的自动压缩和缓存
+3. 使用 PWA 提升离线体验
+4. 优化图片加载和缓存策略

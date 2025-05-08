@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# GPT-4o 图片导航站项目指南
+
+## 项目概述
+这是一个使用 React + TypeScript + Vite 构建的图片导航网站，展示 GPT-4o 生成的图片案例。项目使用了现代化的技术栈和工具链。
+
+## 核心文件结构
+- [src/](mdc:src) - 源代码目录
+  - [components/](mdc:src/components) - React 组件
+    - [ui/](mdc:src/components/ui) - 基于 shadcn/ui 的 UI 组件
+  - [hooks/](mdc:src/hooks) - React 自定义 hooks
+  - [lib/](mdc:src/lib) - 工具函数和通用库
+  - [data/](mdc:src/data) - 数据文件
+
+## 配置文件
+- [vite.config.ts](mdc:vite.config.ts) - Vite 构建配置
+- [tailwind.config.js](mdc:tailwind.config.js) - Tailwind CSS 配置
+- [tsconfig.json](mdc:tsconfig.json) - TypeScript 配置
+- [package.json](mdc:package.json) - 项目依赖和脚本
+
+## 部署相关
+- [wrangler.toml](mdc:wrangler.toml) - Cloudflare Workers 配置
+- [netlify.toml](mdc:netlify.toml) - Netlify 部署配置
+
+## 开发指南
+1. 组件开发应遵循 shadcn/ui 的设计规范
+2. 使用 TypeScript 进行类型检查
+3. 使用 Tailwind CSS 进行样式开发
+4. 遵循 React Hooks 的最佳实践
+
+## 环境配置
+项目使用 `.env` 文件管理环境变量：
+- [.env.example](mdc:.env.example) - 环境变量模板
+- [.env](mdc:.env) - 本地环境变量（已被 .gitignore 忽略）

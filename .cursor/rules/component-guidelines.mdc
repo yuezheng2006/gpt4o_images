@@ -1,0 +1,31 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 组件开发指南
+
+## UI 组件规范
+所有 UI 组件都基于 shadcn/ui，存放在 [src/components/ui/](mdc:src/components/ui) 目录下：
+- 使用 Tailwind CSS 进行样式定义
+- 遵循组件命名规范：`{ComponentName}.tsx`
+- 确保组件具有完整的 TypeScript 类型定义
+
+## 业务组件规范
+业务组件存放在 [src/components/](mdc:src/components) 目录下：
+- 每个组件应该是一个独立的文件夹
+- 包含组件主文件和相关的样式、类型定义
+- 使用 index.ts 导出组件
+
+## Hooks 使用规范
+自定义 hooks 存放在 [src/hooks/](mdc:src/hooks) 目录下：
+- 遵循 React Hooks 命名规范：`use{HookName}`
+- 确保 hooks 的可复用性
+- 提供完整的 TypeScript 类型支持
+
+## 最佳实践
+1. 组件应该是纯函数，避免副作用
+2. 使用 React.memo() 优化性能
+3. 使用 TypeScript 类型约束 props
+4. 遵循 React 的生命周期最佳实践
+5. 使用 CSS Modules 或 Tailwind CSS 进行样式隔离

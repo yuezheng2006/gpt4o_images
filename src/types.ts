@@ -1,12 +1,13 @@
 export interface ImageItem {
   id: number;
+  timestamp: string;
   title: string;
   author: string;
   originalLink: string;
   imagePath: string;
   prompt: string;
   needsReferenceImage: boolean;
-  category?: string;
   referenceNote?: string;
   additionalNote?: string;
+  category?: string;
 }
