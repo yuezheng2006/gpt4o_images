@@ -39,6 +39,7 @@ export default defineConfig({
         ]
       },
       workbox: {
+        globDirectory: 'dist/',
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,jpeg,woff,woff2}'],
         runtimeCaching: [
           {
